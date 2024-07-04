@@ -1,0 +1,33 @@
+<!-- <div class="medicos-container">
+  <div *ngFor="let item of medicos$ " (click)="openModal(item)">
+    <img [src]="item.avatar" alt="Foto de {{ item.name }}" class="img">
+    <div class="medico-details">
+      <h3>{{ item.name }}</h3>
+      <p><strong>Email:</strong> {{ item.email }}</p>
+    </div>
+  </div>
+</div> -->
+<div class="medicos-container">
+  <div *ngFor="let item of medicos$ " (click)="openModal(item)">
+    <img src="https://sistemadeventas.com.ar/api/{{item.imagen_producto}}" alt="Foto de {{ item.nombre_producto }}"
+      class="img">
+    <div class="medico-details">
+      <h3>{{ item.nombre_producto }}</h3>
+      <p><strong>Precio:</strong> {{ item.precio_producto }}</p>
+      <p><strong>Disponible:</strong> {{ item.disponible}}</p>
+    </div>
+  </div>
+</div>
+
+<div class="layout-container" *ngIf="selectedMedico">
+  <div class="modal">
+    <div class="modal-content">
+      <img src="https://sistemadeventas.com.ar/api/{{selectedMedico.imagen_producto}}">
+      <span>Nombre: {{ selectedMedico.nombre_producto }}</span>
+      <span>Precio: {{ selectedMedico.precio_producto }}</span>
+      <span>Disponible: {{ selectedMedico.disponible }}</span>
+    </div>
+    <button class="close-button" (click)="closeModal()">Cerrar</button>
+  </div>
+</div>
+

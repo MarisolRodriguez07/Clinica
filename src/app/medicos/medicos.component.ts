@@ -1,16 +1,13 @@
-import { Component, Input} from '@angular/core';
+import { Component} from '@angular/core';
+import { CardsComponent } from '../cards/cards.component';
 
 @Component({
   selector: 'app-medicos',
+  standalone: true,
+  imports: [CardsComponent],
   templateUrl: './medicos.component.html',
-  styleUrls: ['./medicos.component.css'],
-
+  styleUrl: './medicos.component.css'
 })
 export class MedicosComponent {
-  @Input() title: string = 'nombre medico';
-  @Input() content: string = 'breve descripcion';
 
-  onActionClick() {
-    alert('Button clicked!');
-  }
 }

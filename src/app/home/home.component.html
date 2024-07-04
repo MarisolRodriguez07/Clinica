@@ -1,9 +1,20 @@
 <div class="banner">
   <div class="carrusel">
-    <img src="../../assets/banner-centros-hospitalarios.jpg" alt="">
+    <img src="../../assets/banner-centros-hospitalarios.jpg" alt="Banner de Centros Hospitalarios">
+  </div>
+  <div class="overlay">
+    <div class="texto" *ngFor="let texto of textos; let i = index" [class.active]="i === currentText">
+      {{ texto }}
+    </div>
   </div>
 </div>
-<div class="conteiner">
-  <h1>Bienvenidios a la Clinica ECO</h1>
-</div>
+
+<h1>Productos</h1>
+<label for="searchBox">Buscar:</label>
+<input type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFilteredProducts()" id="searchBox" placeholder="Buscar producto...">
+
+<app-cards [medicos]="filteredData"></app-cards>
+
+<span class="loader" *ngIf="loader"></span>
+
 
