@@ -8,7 +8,7 @@
   </div>
 </div> -->
 <div class="medicos-container">
-  <div *ngFor="let item of medicos$ " (click)="openModal(item)">
+  <div *ngFor="let item of medicos " (click)="openModal(item)">
     <img src="https://sistemadeventas.com.ar/api/{{item.imagen_producto}}" alt="Foto de {{ item.nombre_producto }}"
       class="img">
     <div class="medico-details">

@@ -19,7 +19,7 @@ export class CardsComponent implements OnInit {
   private readonly medicosSvc = inject(MedicosService)
   medicos$:any
 
-  @Input() medicos: ApiResponse[] | null = null;
+  @Input() medicos!: any;
   selectedMedico: Producto | null = null;
 
   openModal(item: Producto): void {
@@ -30,6 +30,7 @@ export class CardsComponent implements OnInit {
     this.selectedMedico = null;
   }
 }
+
 
 
 

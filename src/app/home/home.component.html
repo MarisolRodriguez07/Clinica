@@ -11,10 +11,14 @@
 
 <h1>Productos</h1>
 <label for="searchBox">Buscar:</label>
-<input type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFilteredProducts()" id="searchBox" placeholder="Buscar producto...">
+  <input type="text" name="searchBox" [(ngModel)]="searchData" (keyup)="getFileteredPruducts()" id="searchBox" placeholder="Buscar producto...">
 
-<app-cards [medicos]="filteredData"></app-cards>
 
-<span class="loader" *ngIf="loader"></span>
+
+    <app-cards [medicos]="data"></app-cards>
+
+
+
+
 
 
